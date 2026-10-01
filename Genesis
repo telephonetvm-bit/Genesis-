@@ -1,0 +1,12 @@
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://api.aiai.by/v1",
+    api_key="sk-vedai-RUagmWLkWXCh5FYDj9_yZ40WcBqctBXyIv1I8ZAFa-o",
+)
+
+response = client.chat.completions.create(
+    model="gpt-audio",
+    messages=[{"role": "user", "content": "Привет!"}],
+)
+print(response.choices[0].message.content)
